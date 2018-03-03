@@ -22,11 +22,11 @@ public class MainActivity extends AppCompatActivity {
     private Button editEmployeeButton;
     private Button deleteEmployeeButton;
     private Button viewAllEmployeeButton;
-    private EmployeeOperations employeeOps =  new EmployeeOperations(this);;
+    private EmployeeOperations employeeOps;
 
 
     private static final String EXTRA_EMP_ID = "com.example.alex.idname.empId";
-    //com.example.alex.idname
+    //com.example.alex.idname --> you package name from AndroidManifest
     private static final String EXTRA_ADD_UPDATE = "com.example.alex.idname.add_update";
 
 
@@ -118,8 +118,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void getEmpIdAndRemoveEmp(){
 
-
-
         LayoutInflater li = LayoutInflater.from(this);
         View getEmpIdView = li.inflate(R.layout.dialog_get_emp_id, null);
 
@@ -138,19 +136,21 @@ public class MainActivity extends AppCompatActivity {
                         // edit text
                         employeeOps = new EmployeeOperations(MainActivity.this);
                         // Make sure you are creating an object of Employee Operations class before using it!!!
+                        // trebuie dat un id care exista in lista
                         employeeOps.open();
                         employeeOps.removeEmployee(employeeOps.getEmployee(Long.parseLong(userInput.getText().toString())));
                         Toast t = Toast.makeText(MainActivity.this,"Employee removed successfully!",Toast.LENGTH_SHORT);
                         t.show();
                     }
                 }).create()
-                .show();;
+                .show();
         employeeOps.close();
     }
     @Override
     protected void onResume() {
         super.onResume();
-       employeeOps.open();
+        employeeOps = new EmployeeOperations(this);
+        employeeOps.open();
     }
 
     @Override
