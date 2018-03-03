@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.alex.idname.MainActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:gravity="clip_horizontal"
+        android:paddingBottom="@dimen/header_bottom_margin"
+        android:paddingLeft="@dimen/header_margin"
+        android:paddingRight="@dimen/header_margin"
+        android:paddingTop="@dimen/header_margin"
+        android:text="Choose a menu Option"
+        android:textSize="@dimen/text_size"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button_add_employee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Employee" />
+
+    <Button
+        android:id="@+id/button_edit_employee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Employee" />
+
+    <Button
+        android:id="@+id/button_delete_employee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Remove Employe" />
+
+    <Button
+        android:id="@+id/button_view_employees"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View All Employe" />
+
+</LinearLayout>
